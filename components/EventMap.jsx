@@ -28,7 +28,7 @@ const EventMap = ({ evt }) => {
 				setLoading(false)
 			})
 			.catch(error => console.log('error', error))
-	}, [viewport, evt.address])
+	}, [])
 
 	if (loading) return null
 
