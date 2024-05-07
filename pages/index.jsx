@@ -23,7 +23,7 @@ export default function Home({ events }) {
 	)
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const res = await fetch(
 		`${API_URL}/events?populate=*&sort=date:asc&pagination[limit]=4`
 	)
@@ -31,6 +31,5 @@ export async function getStaticProps() {
 
 	return {
 		props: { events: events.data },
-		revalidate: 1,
 	}
 }
