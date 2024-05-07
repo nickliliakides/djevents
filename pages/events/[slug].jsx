@@ -30,6 +30,7 @@ const EventPage = ({ evt }) => {
 							src={event.image.data.attributes.formats.large.url}
 							width={960}
 							height={600}
+							alt="event-lg-image"
 						/>
 					</div>
 				)}
