@@ -4,7 +4,6 @@ import MetaLayout from '@/components/MetaLayout'
 import { API_URL } from '@/config/index'
 
 export default function Home({ events }) {
-	console.log('🚀 ~ API_URL:', API_URL)
 	return (
 		<MetaLayout>
 			<h1>Latest events</h1>
