@@ -8,9 +8,11 @@ export const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null)
 	const [error, setError] = useState(null)
 
-	const router = useRouter();
+	const router = useRouter()
 
-	useEffect(() => checkAuth(), [])
+	useEffect(() => {
+		checkAuth()
+	}, [])
 
 	// Register user
 	const register = async user => {
@@ -60,10 +62,10 @@ export const AuthProvider = ({ children }) => {
 	// Logout user
 	const logout = async () => {
 		const res = await fetch(`${NEXT_URL}/api/logout`, {
-			method: 'POST'
+			method: 'POST',
 		})
 
-		if(res.ok) {
+		if (res.ok) {
 			setUser(null)
 			router.push('/')
 		}
