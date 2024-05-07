@@ -12,7 +12,7 @@ const EventMap = ({ evt }) => {
 		longitude: -0.12494494476665748,
 		width: '100%',
 		height: '500px',
-		zoom: 17,
+		zoom: 16,
 	})
 
 	useEffect(() => {
@@ -28,7 +28,7 @@ const EventMap = ({ evt }) => {
 				setLoading(false)
 			})
 			.catch(error => console.log('error', error))
-	}, [])
+	}, [viewport, evt.address])
 
 	if (loading) return null
 
@@ -39,7 +39,12 @@ const EventMap = ({ evt }) => {
 			onViewportChange={vp => setViewport(vp)}
 		>
 			<Marker key={evt.id} latitude={lat} longitude={lng}>
-				<Image src="/images/pin.svg" width={30} height={30} />
+				<Image
+					src="/images/pin.svg"
+					width={30}
+					height={30}
+					alt="map-pin"
+				/>
 			</Marker>
 		</ReactMapGl>
 	)

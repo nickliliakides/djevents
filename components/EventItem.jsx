@@ -14,6 +14,7 @@ const EventItem = ({ evt }) => {
 								: '/images/event-default.png'
 						}
 						layout="fill"
+						alt="image-thumbnail"
 					/>
 				)}
 			</div>

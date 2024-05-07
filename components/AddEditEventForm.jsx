@@ -195,6 +195,7 @@ const AddEditEventForm = ({ title, evt, auth }) => {
 								src={imagePreview || '/images/no-image.png'}
 								height={120}
 								width={200}
+								alt="image-preview"
 							/>
 						</div>
 						<button
