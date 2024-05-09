@@ -17,16 +17,14 @@ const EventMap = ({ evt }) => {
 
 	useEffect(() => {
 		fetch(
-			`https://geocode.search.hereapi.com/v1/
-			geocode
-			?q=${evt.address}&apiKey=${process.env.NEXT_PUBLIC_HERE_API_KEY}`
+			`https://api.geoapify.com/v1/geocode/search?text=${evt.address}&apiKey=${process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY}`
 		)
 			.then(response => response.json())
 			.then(result => {
-				const { lat, lng } = result.items[0].position
+				const { lat, lon } = result.features[0].properties
 				setLat(lat)
-				setLng(lng)
-				setViewport({ ...viewport, latitude: lat, longitude: lng })
+				setLng(lon)
+				setViewport({ ...viewport, latitude: lat, longitude: lon })
 				setLoading(false)
 			})
 			.catch(error => console.log('error', error))
